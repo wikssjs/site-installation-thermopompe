@@ -37,7 +37,7 @@
         "name": "Saint-Louis-de-Gonzague",
         "containedInPlace": {
           "@type": "AdministrativeArea",
-          "name": "Montérégie (16)"
+          "name": "Chaudière-Appalaches (12)"
         }
       },
       "priceRange": "$$-$$$$",
@@ -59,8 +59,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Montérégie (16)",
-          "item": "https://installation-thermopompe.ca/region/monteregie-16"
+          "name": "Chaudière-Appalaches (12)",
+          "item": "https://installation-thermopompe.ca/region/chaudiere-appalaches-12"
         },
         {
           "@type": "ListItem",
@@ -127,7 +127,7 @@
     <nav class="el-breadcrumb__inner">
       <a href="/">Accueil</a>
       <span class="el-breadcrumb__sep">›</span>
-      <a href="/region/monteregie-16">Montérégie (16)</a>
+      <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
       <span class="el-breadcrumb__sep">›</span>
       <span class="el-breadcrumb__current">Installation Thermopompe Saint-Louis-de-Gonzague</span>
     </nav>
@@ -268,7 +268,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="installation-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="installation-error" style="display:none"
+data-err-msg="Choisissez le type d'installation pour recevoir les soumissions adaptées à votre projet."  ></p>
 </div>
 
 
@@ -286,7 +287,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Type de propriété</label>
-  <select name="type-propriete" required class="el-select">
+  <select name="type-propriete" requireddata-err-required="Le type de propriété est nécessaire pour choisir la bonne thermopompe."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="maison">Maison unifamiliale</option>
     <option value="condo">Condo / Appartement</option>
@@ -301,7 +302,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       
 <div class="el-field">
   <label class="el-label">Superficie totale de la propriété</label>
-  <select name="superficie" required class="el-select">
+  <select name="superficie" requireddata-err-required="La superficie est nécessaire pour dimensionner correctement votre thermopompe."    class="el-select">
     <option value="" disabled selected>Sélectionner…</option>
     <option value="moins-1000">Moins de 1 000 pi²</option>
     <option value="1000-1500">1 000 – 1 500 pi²</option>
@@ -360,7 +361,8 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
       </div>
     </label>
   </div>
-  <p id="delai-error" class="hidden" style="font-size:.75rem;color:#ef4444;margin-top:.25rem;display:none">Veuillez faire un choix.</p>
+  <p id="delai-error" style="display:none"
+data-err-msg="Précisez votre délai pour que les installateurs organisent leur agenda."  ></p>
 </div>
 
 
@@ -413,7 +415,7 @@ required             style="position:absolute;width:1px;height:1px;overflow:hidd
 <div class="el-field">
   <label class="el-label">Prénom et nom</label>
   <input type="text" name="nom"
-placeholder="Marie Tremblay"required    class="el-input">
+placeholder="Marie Tremblay"requireddata-err-required="Votre nom est requis pour que l'installateur vous identifie."    class="el-input">
 </div>
 
 
@@ -421,7 +423,7 @@ placeholder="Marie Tremblay"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Courriel</label>
   <input type="email" name="courriel"
-placeholder="marie@exemple.com"required    class="el-input">
+placeholder="marie@exemple.com"requireddata-err-required="Votre courriel est requis pour recevoir vos soumissions d'installation."data-err-format="Courriel invalide — vérifiez le format, ex. : nom@exemple.com."    class="el-input">
 </div>
 
 
@@ -429,7 +431,7 @@ placeholder="marie@exemple.com"required    class="el-input">
 <div class="el-field">
   <label class="el-label">Téléphone</label>
   <input type="tel" name="telephone"
-placeholder="514 000-0000"required    class="el-input">
+placeholder="514 000-0000"requireddata-err-required="Votre numéro est requis pour que les installateurs certifiés RBQ vous contactent."data-err-format="Numéro invalide — 10 chiffres, ex. : 514 000-0000."    class="el-input">
 </div>
 
 
@@ -515,20 +517,14 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
 <section class="" style="background:var(--bg);padding-block:4.5rem 5rem;border-bottom:1px solid var(--bdr)">
   <div class="el-wrap-sm">
     <div class="in-city-intro">
-      <section>
-  <h2>Pourquoi les thermopompes certifiées à -25 °C changent vraiment vos factures à Saint-Louis-de-Gonzague</h2>
-  <p>Les hivers en Montérégie font descendre les températures régulièrement sous -10 °C, avec des pointes autour de -15 °C à -20 °C lors des vagues de froid. À ces niveaux, la capacité de chauffage d'une thermopompe s'érode : un appareil non certifié pour les basses températures bascule rapidement sur l'appoint électrique, coûteux et peu efficace. Une thermopompe homologuée à -25 °C conserve un coefficient de performance (COP) acceptable même lors des grands froids, ce qui réduit concrètement votre consommation électrique en janvier et février. Pour comparer deux devis à Saint-Louis-de-Gonzague, demandez toujours la fiche technique de l'appareil : cherchez-y les données de COP à -15 °C et -25 °C, pas seulement à +8 °C. Cette distinction entre conditions nominales et conditions réelles de Montérégie (16) fait souvent 20 à 30 % de différence sur vos frais de chauffage annuels. Un installateur RBQ compétent vous guidera vers un modèle réellement adapté au climat régional, pas vers un système sous-dimensionné qui vous coûtera cher en appoint.</p>
-</section>
+      <h2>Pourquoi la performance à -25 °C détermine votre consommation électrique en janvier à Saint-Louis-de-Gonzague</h2>
+<p>Les hivers de Chaudière-Appalaches (12) ne pardonnent pas : les minima dépassent régulièrement -20 °C, parfois -30 °C aux pires moments de janvier et février. À ces températures, une thermopompe air-air mal dimensionnée perd beaucoup de son efficacité et sollicite constamment la résistance électrique d'appoint, ce qui fait exploser votre facture Hydro-Québec. Voilà pourquoi le COP (coefficient de performance) affiché à +7 °C n'a aucune valeur pour vous : vous devez exiger une fiche technique détaillant la performance à -15 °C et idéalement -25 °C. Un équipement certifié pour ces conditions conserve un rendement de 2,0 à 2,5 COP au cœur de l'hiver, tandis qu'un appareil générique peut tomber à 1,2 ou 1,5, doublant votre consommation électrique. Lors de votre rencontre avec l'installateur RBQ, demandez explicitement les données de performance froide et comparez deux devis côte à côte sur cet aspect. C'est la différence entre une installation rentable et un regret coûteux chaque mois de décembre à mars.</p>
 
-<section>
-  <h2>Les étapes concrètes de votre installation à Saint-Louis-de-Gonzague : du diagnostic au premier chauffage</h2>
-  <p>Une installation thermopompe réussie suit un ordre précis. D'abord, le technician RBQ en réfrigération effectue une visite sur site : il mesure les surfaces, évalue l'isolation de votre maison typique de Montérégie (16), et localise le meilleur emplacement pour l'unité extérieure. Ensuite, il calcule votre charge thermique réelle en fonction du climat local et des déperditions de votre enveloppe. Parallèlement, un électricien vérifie votre panneau 100 A ou 200 A pour s'assurer qu'un disjoncteur 240V dédié peut être ajouté sans surcharge. Une fois l'appareil installé à Saint-Louis-de-Gonzague, le technicien purge les lignes frigorifiques, teste la pression d'azote, puis active le système sous vide. Les tests de performance et l'activation de la garantie manufacturière ne surviennent qu'après cette séquence complète. Chaque étape protège votre investissement : sauter une étape ou confier le travail à un non-certifié RBQ invalide votre couverture et risque de panne coûteuse en hiver.</p>
-</section>
+<h2>Étapes concrètes de l'installation chez vous à Saint-Louis-de-Gonzague : du repérage à la mise en service</h2>
+<p>Une installation thermopompe à Saint-Louis-de-Gonzague suit un protocole précis, que vous comprendre aide à évaluer la sérieux d'un entrepreneur RBQ. D'abord, la visite de repérage : l'installateur mesure votre surface habitable, inspecte l'isolation, les fenêtres, la distribution d'air existante et identifie l'emplacement des unités intérieures et extérieures. Ensuite, le calcul de charge thermique détermine la puissance en BTU nécessaire pour maintenir confort et efficacité. Puis vient le câblage : la majorité des maisons anciennes de Chaudière-Appalaches (12) sont en 100 A, qui peut nécessiter une mise à niveau du panneau électrique à 200 A, un travail que seul un électricien qualifié peut exécuter. Une fois l'installation physique terminée, l'installateur teste les pressions frigorifiques, vérifie l'étanchéité et effectue les mises en service. Chaque étape est documentée ; vous devez recevoir une attestation de réfrigération signée et une garantie fabricant. Ce processus prend généralement 2 à 4 semaines selon la saison et la disponibilité de main-d'œuvre locale.</p>
 
-<section>
-  <h2>Comparer deux soumissions thermopompe à Saint-Louis-de-Gonzague : ce qui fait vraiment varier le prix</h2>
-  <p>Deux devis pour la même unité intérieure peuvent différer de 3 000 à 5 000 $ : ne pas comprendre pourquoi vous expose à une mauvaise décision. La longueur de la ligne frigorifique est souvent invisible mais décisive : acheminer le fluide de la maison vers l'unité extérieure à plus de 15 mètres augmente la main-d'œuvre et les matériaux. L'accès au mur extérieur compte aussi : un passage facile coûte moins qu'un perçage complexe en fondation. La mise à niveau électrique est un poste majeur en Montérégie (16), où beaucoup de maisons datent d'avant 1980 avec panneaux 100 A saturés. Enfin, les multi-zones (deux têtes intérieures ou plus) ajoutent du coût mais améliorent le confort dans une maison de Saint-Louis-de-Gonzague à plusieurs étages. Une bonne soumission détaille chaque poste : unité, tuyauterie, main-d'œuvre électrique, et travaux additionnels. Demandez à votre installateur RBQ de justifier les écarts ; une différence anormale cache parfois des économies dangereuses pour la fiabilité.</p>
-</section>
+<h2>Les aides Rénoclimat et LogisVert à Chaudière-Appalaches (12) : combien vous pouvez vraiment récupérer</h2>
+<p>Les résidents de Saint-Louis-de-Gonzague et de Chaudière-Appalaches (12) accèdent à plusieurs programmes de subvention qui réduisent significativement le coût initial. Rénoclimat offre entre 1 500 et 3 000 $ selon votre revenu familial et l'équipement choisi ; LogisVert d'Hydro-Québec monte jusqu'à 6 700 $ pour une thermopompe air-air performante, sous condition de respecter des normes d'efficacité minimales. Si vous remplacez un chauffage au mazout, le RCEE fédéral ajoute encore jusqu'à 5 000 $. Pour ne pas perdre ces aides, l'installateur doit être certifié RBQ en réfrigération avant le début des travaux ; demandez une preuve écrite. Les formulaires de demande doivent être complétés avant la facture finale dans la plupart des cas. Contactez Hydro-Québec et le ministère de l'Énergie du Québec pour vérifier votre admissibilité exacte, car les critères changent annuellement. Un installateur local expérimenté connaît ces règles par cœur et peut vous conseiller sur le meilleur parcours pour maximiser vos remboursements sans risquer votre garantie.</p>
     </div>
   </div>
 </section>
@@ -870,23 +866,23 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
       </div>
 
       <div>
-        <h4 class="el-footer__col-label">Installation thermopompe en Montérégie (16)</h4>
+        <h4 class="el-footer__col-label">Installation thermopompe en Chaudière-Appalaches (12)</h4>
         <div class="el-footer__links">
-          <a href="/saint-charles-sur-richelieu">Saint-Charles-sur-Richelieu</a>
-          <a href="/mcmasterville">McMasterville</a>
-          <a href="/saint-remi">Saint-Rémi</a>
-          <a href="/saint-valerien-de-milton">Saint-Valérien-de-Milton</a>
-          <a href="/ange-gardien">Ange-Gardien</a>
-          <a href="/sainte-catherine">Sainte-Catherine</a>
-          <a href="/chambly">Chambly</a>
-          <a href="/riviere-beaudette">Rivière-Beaudette</a>
-          <a href="/boucherville">Boucherville</a>
-          <a href="/rigaud">Rigaud</a>
-          <a href="/saint-alexandre">Saint-Alexandre</a>
-          <a href="/yamaska">Yamaska</a>
-          <a href="/saint-telesphore">Saint-Télesphore</a>
-          <a href="/pincourt">Pincourt</a>
-          <a href="/saint-nazaire-d-acton">Saint-Nazaire-d'Acton</a>
+          <a href="/sainte-sabine">Sainte-Sabine</a>
+          <a href="/saint-benjamin">Saint-Benjamin</a>
+          <a href="/saint-theophile">Saint-Théophile</a>
+          <a href="/beauceville">Beauceville</a>
+          <a href="/saint-jacques-de-leeds">Saint-Jacques-de-Leeds</a>
+          <a href="/east-broughton">East Broughton</a>
+          <a href="/sainte-clotilde-de-beauce">Sainte-Clotilde-de-Beauce</a>
+          <a href="/cap-saint-ignace">Cap-Saint-Ignace</a>
+          <a href="/sainte-claire">Sainte-Claire</a>
+          <a href="/sainte-henedine">Sainte-Hénédine</a>
+          <a href="/tourville">Tourville</a>
+          <a href="/saint-damien-de-buckland">Saint-Damien-de-Buckland</a>
+          <a href="/saint-prosper">Saint-Prosper</a>
+          <a href="/saint-benoit-labre">Saint-Benoît-Labre</a>
+          <a href="/saint-pierre-de-la-riviere-du-sud">Saint-Pierre-de-la-Rivière-du-Sud</a>
         </div>
       </div>
 
@@ -894,7 +890,7 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         <h4 class="el-footer__col-label">Navigation</h4>
         <nav class="el-footer__nav">
           <a href="/">Accueil</a>
-          <a href="/region/monteregie-16">Montérégie (16)</a>
+          <a href="/region/chaudiere-appalaches-12">Chaudière-Appalaches (12)</a>
           <a href="/sitemap-index.xml">Plan du site XML</a>
         </nav>
       </div>
@@ -903,7 +899,7 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
 
     <div class="el-footer__bottom">
       <p>© 2026 Installation Thermopompe Québec · Tous droits réservés</p>
-      <p>Installation Thermopompe · Saint-Louis-de-Gonzague · Montérégie (16)</p>
+      <p>Installation Thermopompe · Saint-Louis-de-Gonzague · Chaudière-Appalaches (12)</p>
     </div>
   </div>
 </footer>
@@ -1028,7 +1024,7 @@ function _showRadioErr(errEl, groupName, stepEl) {
   while (errEl.firstChild) errEl.removeChild(errEl.firstChild);
   errEl.appendChild(_mkSvg('warn'));
   var span = document.createElement('span');
-  span.textContent = 'Veuillez faire un choix.';
+  span.textContent = errEl.dataset.errMsg || 'Veuillez faire un choix.';
   errEl.appendChild(span);
   stepEl.querySelectorAll('input[name="' + groupName + '"]').forEach(function(r) {
     r.addEventListener('change', function() { errEl.style.display = 'none'; }, {once: true});
@@ -1057,7 +1053,7 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       errCount++;
-      _fieldErr(inp, 'Ce champ est requis.');
+      _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       return;
     }
@@ -1065,14 +1061,14 @@ function nextStep(n) {
       var digits = inp.value.replace(/\D/g, '');
       if (digits.length !== 10) {
         errCount++;
-        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
+        _fieldErr(inp, inp.dataset.errFormat || 'Numéro invalide — 10 chiffres requis (ex. : 514 000-0000).');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
     if (inp.type === 'email') {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
         errCount++;
-        _fieldErr(inp, 'Adresse courriel invalide.');
+        _fieldErr(inp, inp.dataset.errFormat || 'Adresse courriel invalide.');
         inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
       }
     }
