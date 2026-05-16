@@ -213,7 +213,7 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
   <input type="hidden" name="access_key" value="77b09b20-401a-4868-aa9e-628501e5c0f5">
   <input type="hidden" name="subject" value="Nouveau lead — Installation Thermopompe Québec — Saint-Sébastien">
   <input type="hidden" name="ville-cible" value="Saint-Sébastien">
@@ -1158,6 +1158,23 @@ if (_stickyBar) {
     els.forEach(function(el){io.observe(el);});
   } else {
     els.forEach(function(el){el.classList.add('is-visible');});
+  }
+  /* Nav scroll tint */
+  var nav=document.querySelector('.el-nav');
+  if(nav){window.addEventListener('scroll',function(){nav.classList.toggle('is-scrolled',window.scrollY>60);},{passive:true});}
+  /* FAQ accordion */
+  document.querySelectorAll('.el-faq-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.closest('.el-faq-item');
+      var isOpen=item.classList.contains('is-open');
+      document.querySelectorAll('.el-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
+      if(!isOpen)item.classList.add('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>;});
   }
   /* Nav scroll tint */
   var nav=document.querySelector('.el-nav');
