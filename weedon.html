@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          15 installations complétées cette semaine
+          6 installations complétées cette semaine
         </div>
       </div>
 
@@ -861,28 +861,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          15 installations complétées cette semaine
+          6 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Estrie (05)</h4>
         <div class="el-footer__links">
-          <a href="/saint-ignace-de-stanbridge">Saint-Ignace-de-Stanbridge</a>
           <a href="/maricourt">Maricourt</a>
-          <a href="/east-hereford">East Hereford</a>
-          <a href="/waterville">Waterville</a>
-          <a href="/windsor">Windsor</a>
-          <a href="/bolton-ouest">Bolton-Ouest</a>
-          <a href="/granby">Granby</a>
-          <a href="/lingwick">Lingwick</a>
-          <a href="/hatley">Hatley</a>
-          <a href="/waterloo">Waterloo</a>
-          <a href="/richmond">Richmond</a>
-          <a href="/orford">Orford</a>
-          <a href="/bedford">Bedford</a>
+          <a href="/scotstown">Scotstown</a>
+          <a href="/bromont">Bromont</a>
+          <a href="/stanstead-est">Stanstead-Est</a>
+          <a href="/sainte-sabine">Sainte-Sabine</a>
+          <a href="/stanstead">Stanstead</a>
+          <a href="/piopolis">Piopolis</a>
           <a href="/shefford">Shefford</a>
-          <a href="/barnston-ouest">Barnston-Ouest</a>
+          <a href="/saint-claude">Saint-Claude</a>
+          <a href="/austin">Austin</a>
+          <a href="/stornoway">Stornoway</a>
+          <a href="/lac-brome">Lac-Brome</a>
+          <a href="/saint-armand">Saint-Armand</a>
+          <a href="/saint-venant-de-paquette">Saint-Venant-de-Paquette</a>
+          <a href="/saint-denis-de-brompton">Saint-Denis-de-Brompton</a>
         </div>
       </div>
 
@@ -1044,17 +1044,16 @@ function showStep(n) {
   _fStep = n;
 }
 
-function nextStep(n) {
-  var current = document.getElementById('step-' + _fStep);
-  if (!current) { showStep(n); return; }
+function _validateStep(current, stepNum) {
   var errCount = 0;
-
   current.querySelectorAll('input[required], select[required], textarea[required]').forEach(function(inp) {
     if (inp.type === 'radio') return;
+    var isSelect = (inp.tagName === 'SELECT');
     if (!inp.value.trim()) {
       errCount++;
       _fieldErr(inp, inp.dataset.errRequired || 'Ce champ est requis.');
       inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      if (isSelect) inp.addEventListener('change', function() { _clearErr(inp); }, {once: true});
       return;
     }
     if (inp.type === 'tel') {
@@ -1073,19 +1072,26 @@ function nextStep(n) {
       }
     }
   });
-
-  _radioGroups.forEach(function(rg) {
-    if (rg.step !== _fStep) return;
-    var checked = current.querySelector('input[name="' + rg.name + '"]:checked');
-    if (!checked) {
-      errCount++;
-      if (rg.error) {
-        var errEl = document.getElementById(rg.error);
-        if (errEl) _showRadioErr(errEl, rg.name, current);
+  if (stepNum !== undefined) {
+    _radioGroups.forEach(function(rg) {
+      if (rg.step !== stepNum) return;
+      var checked = current.querySelector('input[name="' + rg.name + '"]:checked');
+      if (!checked) {
+        errCount++;
+        if (rg.error) {
+          var errEl = document.getElementById(rg.error);
+          if (errEl) _showRadioErr(errEl, rg.name, current);
+        }
       }
-    }
-  });
+    });
+  }
+  return errCount;
+}
 
+function nextStep(n) {
+  var current = document.getElementById('step-' + _fStep);
+  if (!current) { showStep(n); return; }
+  var errCount = _validateStep(current, _fStep);
   if (errCount > 0) { _showBanner(current, errCount); return; }
   showStep(n);
 }
@@ -1109,6 +1115,11 @@ var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {
     e.preventDefault();
+    var current = document.getElementById('step-' + _fStep);
+    if (current) {
+      var errCount = _validateStep(current, _fStep);
+      if (errCount > 0) { _showBanner(current, errCount); return; }
+    }
     var data = new FormData(_form);
     fetch(_submitUrl, {
       method: 'POST',
