@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          4 installations complétées cette semaine
+          15 installations complétées cette semaine
         </div>
       </div>
 
@@ -859,28 +859,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          4 installations complétées cette semaine
+          15 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Lanaudière (14)</h4>
         <div class="el-footer__links">
-          <a href="/sainte-marie-salome">Sainte-Marie-Salomé</a>
-          <a href="/la-visitation-de-l-ile-dupas">La Visitation-de-l'Île-Dupas</a>
-          <a href="/saint-didace">Saint-Didace</a>
-          <a href="/saint-come">Saint-Côme</a>
-          <a href="/sainte-genevieve-de-berthier">Sainte-Geneviève-de-Berthier</a>
-          <a href="/mascouche">Mascouche</a>
-          <a href="/saint-calixte">Saint-Calixte</a>
-          <a href="/berthierville">Berthierville</a>
-          <a href="/baie-de-la-bouteille">Baie-de-la-Bouteille</a>
           <a href="/saint-pierre">Saint-Pierre</a>
-          <a href="/entrelacs">Entrelacs</a>
+          <a href="/lavaltrie">Lavaltrie</a>
+          <a href="/lac-du-taureau">Lac-du-Taureau</a>
+          <a href="/lac-cabasta">Lac-Cabasta</a>
+          <a href="/saint-cleophas-de-brandon">Saint-Cléophas-de-Brandon</a>
+          <a href="/berthierville">Berthierville</a>
+          <a href="/saint-felix-de-valois">Saint-Félix-de-Valois</a>
+          <a href="/mascouche">Mascouche</a>
+          <a href="/sainte-melanie">Sainte-Mélanie</a>
+          <a href="/saint-thomas">Saint-Thomas</a>
+          <a href="/saint-esprit">Saint-Esprit</a>
           <a href="/sainte-elisabeth">Sainte-Élisabeth</a>
-          <a href="/saint-roch-de-l-achigan">Saint-Roch-de-l'Achigan</a>
-          <a href="/manawan">Manawan</a>
-          <a href="/saint-alexis">Saint-Alexis</a>
+          <a href="/l-assomption">L'Assomption</a>
+          <a href="/saint-michel-des-saints">Saint-Michel-des-Saints</a>
+          <a href="/entrelacs">Entrelacs</a>
         </div>
       </div>
 
@@ -944,6 +944,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -953,8 +965,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -973,6 +1001,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 

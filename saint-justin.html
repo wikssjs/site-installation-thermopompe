@@ -655,15 +655,6 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
     <div class="el-svc-grid">
       <div class="el-svc-card el-reveal el-reveal-d1">
         <div class="el-svc-icon-wrap">
-          <svg aria-hidden="true"><use href="#icon-award"/></svg>
-        </div>
-        <div>
-          <h3 class="el-svc-card__title">Raccordement électrique certifié</h3>
-          <p class="el-svc-card__desc">Travaux électriques effectués par électriciens certifiés. Mise à jour du panneau si nécessaire, permis inclus.</p>
-        </div>
-      </div>
-      <div class="el-svc-card el-reveal el-reveal-d2">
-        <div class="el-svc-icon-wrap">
           <svg aria-hidden="true"><use href="#icon-home"/></svg>
         </div>
         <div>
@@ -671,22 +662,22 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
           <p class="el-svc-card__desc">Systèmes de grande capacité pour bureaux, commerces et restaurants. Conformité aux normes commerciales.</p>
         </div>
       </div>
-      <div class="el-svc-card el-reveal el-reveal-d3">
+      <div class="el-svc-card el-reveal el-reveal-d2">
         <div class="el-svc-icon-wrap">
-          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-award"/></svg>
         </div>
         <div>
-          <h3 class="el-svc-card__title">Formation & mise en service</h3>
-          <p class="el-svc-card__desc">Démonstration complète du fonctionnement, configuration du thermostat, conseils d'utilisation et d'entretien.</p>
+          <h3 class="el-svc-card__title">Raccordement électrique certifié</h3>
+          <p class="el-svc-card__desc">Travaux électriques effectués par électriciens certifiés. Mise à jour du panneau si nécessaire, permis inclus.</p>
         </div>
       </div>
-      <div class="el-svc-card el-reveal el-reveal-d4">
+      <div class="el-svc-card el-reveal el-reveal-d3">
         <div class="el-svc-icon-wrap">
-          <svg aria-hidden="true"><use href="#icon-settings"/></svg>
+          <svg aria-hidden="true"><use href="#icon-zap"/></svg>
         </div>
         <div>
-          <h3 class="el-svc-card__title">Choix du bon modèle</h3>
-          <p class="el-svc-card__desc">Conseils neutres et objectifs sur les marques et modèles. Mitsubishi, Daikin, LG, Fujitsu, Lennox selon votre budget.</p>
+          <h3 class="el-svc-card__title">Installation multi-zones</h3>
+          <p class="el-svc-card__desc">Système VRF multi-têtes pour plusieurs pièces ou logements. Contrôle indépendant de température par zone.</p>
         </div>
       </div>
       <div class="el-svc-card el-reveal el-reveal-d4">
@@ -700,20 +691,11 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
       </div>
       <div class="el-svc-card el-reveal el-reveal-d4">
         <div class="el-svc-icon-wrap">
-          <svg aria-hidden="true"><use href="#icon-home"/></svg>
+          <svg aria-hidden="true"><use href="#icon-settings"/></svg>
         </div>
         <div>
-          <h3 class="el-svc-card__title">Installation résidentielle</h3>
-          <p class="el-svc-card__desc">Bilan thermique, sélection du modèle, pose certifiée RBQ et mise en service complète. Garantie fabricant maximisée.</p>
-        </div>
-      </div>
-      <div class="el-svc-card el-reveal el-reveal-d4">
-        <div class="el-svc-icon-wrap">
-          <svg aria-hidden="true"><use href="#icon-zap"/></svg>
-        </div>
-        <div>
-          <h3 class="el-svc-card__title">Installation multi-zones</h3>
-          <p class="el-svc-card__desc">Système VRF multi-têtes pour plusieurs pièces ou logements. Contrôle indépendant de température par zone.</p>
+          <h3 class="el-svc-card__title">Choix du bon modèle</h3>
+          <p class="el-svc-card__desc">Conseils neutres et objectifs sur les marques et modèles. Mitsubishi, Daikin, LG, Fujitsu, Lennox selon votre budget.</p>
         </div>
       </div>
       <div class="el-svc-card el-reveal el-reveal-d4">
@@ -723,6 +705,24 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         <div>
           <h3 class="el-svc-card__title">Contrat d'entretien annuel</h3>
           <p class="el-svc-card__desc">Maintenance préventive annuelle pour prolonger la durée de vie et maintenir l'efficacité maximale du système.</p>
+        </div>
+      </div>
+      <div class="el-svc-card el-reveal el-reveal-d4">
+        <div class="el-svc-icon-wrap">
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        </div>
+        <div>
+          <h3 class="el-svc-card__title">Formation & mise en service</h3>
+          <p class="el-svc-card__desc">Démonstration complète du fonctionnement, configuration du thermostat, conseils d'utilisation et d'entretien.</p>
+        </div>
+      </div>
+      <div class="el-svc-card el-reveal el-reveal-d4">
+        <div class="el-svc-icon-wrap">
+          <svg aria-hidden="true"><use href="#icon-home"/></svg>
+        </div>
+        <div>
+          <h3 class="el-svc-card__title">Installation résidentielle</h3>
+          <p class="el-svc-card__desc">Bilan thermique, sélection du modèle, pose certifiée RBQ et mise en service complète. Garantie fabricant maximisée.</p>
         </div>
       </div>
     </div>
@@ -944,6 +944,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -953,8 +965,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -973,6 +1001,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 

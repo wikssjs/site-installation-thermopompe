@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          9 installations complétées cette semaine
+          8 installations complétées cette semaine
         </div>
       </div>
 
@@ -859,28 +859,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          9 installations complétées cette semaine
+          8 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Bas-Saint-Laurent (01)</h4>
         <div class="el-footer__links">
-          <a href="/saint-valerien">Saint-Valérien</a>
-          <a href="/saint-michel-du-squatec">Saint-Michel-du-Squatec</a>
-          <a href="/saint-narcisse-de-rimouski">Saint-Narcisse-de-Rimouski</a>
-          <a href="/notre-dame-du-portage">Notre-Dame-du-Portage</a>
-          <a href="/saint-clement">Saint-Clément</a>
-          <a href="/lac-des-eaux-mortes">Lac-des-Eaux-Mortes</a>
-          <a href="/lac-casault">Lac-Casault</a>
-          <a href="/saint-arsene">Saint-Arsène</a>
-          <a href="/sainte-florence">Sainte-Florence</a>
-          <a href="/saint-cyprien">Saint-Cyprien</a>
-          <a href="/saint-damase">Saint-Damase</a>
-          <a href="/saint-charles-garnier">Saint-Charles-Garnier</a>
+          <a href="/sayabec">Sayabec</a>
+          <a href="/la-pocatiere">La Pocatière</a>
           <a href="/saint-tharcisius">Saint-Tharcisius</a>
-          <a href="/saint-eloi">Saint-Éloi</a>
-          <a href="/lac-matapedia">Lac-Matapédia</a>
+          <a href="/riviere-du-loup">Rivière-du-Loup</a>
+          <a href="/padoue">Padoue</a>
+          <a href="/price">Price</a>
+          <a href="/mont-joli">Mont-Joli</a>
+          <a href="/la-trinite-des-monts">La Trinité-des-Monts</a>
+          <a href="/sainte-marguerite-marie">Sainte-Marguerite-Marie</a>
+          <a href="/grosses-roches">Grosses-Roches</a>
+          <a href="/saint-ulric">Saint-Ulric</a>
+          <a href="/sainte-irene">Sainte-Irène</a>
+          <a href="/saint-germain-de-kamouraska">Saint-Germain-de-Kamouraska</a>
+          <a href="/lejeune">Lejeune</a>
+          <a href="/lac-des-eaux-mortes">Lac-des-Eaux-Mortes</a>
         </div>
       </div>
 
@@ -944,6 +944,18 @@ function showStep(n) {
   _fStep = n;
 }
 
+function _fieldErr(inp, msg) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (!p) { p = document.createElement('p'); p.className = 'form-err'; p.style.cssText = 'font-size:.75rem;color:#ef4444;margin-top:.25rem'; inp.parentNode.appendChild(p); }
+  p.textContent = msg;
+  inp.style.borderColor = '#fca5a5';
+}
+function _clearErr(inp) {
+  var p = inp.parentNode.querySelector('.form-err');
+  if (p) p.remove();
+  inp.style.borderColor = '';
+}
+
 function nextStep(n) {
   var current = document.getElementById('step-' + _fStep);
   if (!current) { showStep(n); return; }
@@ -953,8 +965,24 @@ function nextStep(n) {
     if (inp.type === 'radio') return;
     if (!inp.value.trim()) {
       valid = false;
-      inp.style.borderColor = '#fca5a5';
-      inp.addEventListener('input', function() { inp.style.borderColor = ''; }, {once: true});
+      _fieldErr(inp, 'Ce champ est requis.');
+      inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      return;
+    }
+    if (inp.type === 'tel') {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.length !== 10) {
+        valid = false;
+        _fieldErr(inp, 'Numéro invalide — 10 chiffres requis (ex: 514 000-0000).');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
+    }
+    if (inp.type === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(inp.value.trim())) {
+        valid = false;
+        _fieldErr(inp, 'Adresse courriel invalide.');
+        inp.addEventListener('input', function() { _clearErr(inp); }, {once: true});
+      }
     }
   });
 
@@ -973,6 +1001,17 @@ function nextStep(n) {
   if (!valid) return;
   showStep(n);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('input[type="tel"]').forEach(function(inp) {
+    inp.addEventListener('input', function() {
+      var d = inp.value.replace(/\D/g, '').slice(0, 10);
+      if (d.length <= 3) inp.value = d;
+      else if (d.length <= 6) inp.value = d.slice(0,3) + ' ' + d.slice(3);
+      else inp.value = d.slice(0,3) + ' ' + d.slice(3,6) + '-' + d.slice(6);
+    });
+  });
+});
 
 function prevStep(n) { showStep(n); }
 
