@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          5 installations complétées cette semaine
+          16 installations complétées cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-installation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-installation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="77b09b20-401a-4868-aa9e-628501e5c0f5">
+  <input type="hidden" name="subject" value="Nouveau lead — Installation Thermopompe Québec — Ristigouche-Sud-Est">
   <input type="hidden" name="ville-cible" value="Ristigouche-Sud-Est">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="in-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Type d'installation</p>
@@ -858,28 +859,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          5 installations complétées cette semaine
+          16 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Gaspésie--Îles-de-la-Madeleine (11)</h4>
         <div class="el-footer__links">
-          <a href="/saint-godefroi">Saint-Godefroi</a>
           <a href="/hope-town">Hope Town</a>
-          <a href="/collines-du-basque">Collines-du-Basque</a>
-          <a href="/sainte-madeleine-de-la-riviere-madeleine">Sainte-Madeleine-de-la-Rivière-Madeleine</a>
-          <a href="/sainte-therese-de-gaspe">Sainte-Thérèse-de-Gaspé</a>
-          <a href="/mont-albert">Mont-Albert</a>
-          <a href="/mont-saint-pierre">Mont-Saint-Pierre</a>
-          <a href="/riviere-bonaventure">Rivière-Bonaventure</a>
-          <a href="/riviere-a-claude">Rivière-à-Claude</a>
-          <a href="/riviere-nouvelle">Rivière-Nouvelle</a>
+          <a href="/shigawake">Shigawake</a>
+          <a href="/saint-maxime-du-mont-louis">Saint-Maxime-du-Mont-Louis</a>
+          <a href="/saint-elzear">Saint-Elzéar</a>
+          <a href="/saint-godefroi">Saint-Godefroi</a>
+          <a href="/gesgapegiag">Gesgapegiag</a>
+          <a href="/cap-chat">Cap-Chat</a>
+          <a href="/murdochville">Murdochville</a>
+          <a href="/saint-simeon">Saint-Siméon</a>
+          <a href="/hope">Hope</a>
+          <a href="/bonaventure">Bonaventure</a>
+          <a href="/cloridorme">Cloridorme</a>
+          <a href="/petite-vallee">Petite-Vallée</a>
           <a href="/new-carlisle">New Carlisle</a>
-          <a href="/new-richmond">New Richmond</a>
-          <a href="/nouvelle">Nouvelle</a>
-          <a href="/mont-alexandre">Mont-Alexandre</a>
-          <a href="/saint-andre-de-restigouche">Saint-André-de-Restigouche</a>
+          <a href="/listuguj">Listuguj</a>
         </div>
       </div>
 
@@ -975,7 +976,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

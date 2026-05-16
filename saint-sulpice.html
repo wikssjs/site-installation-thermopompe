@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          15 installations complétées cette semaine
+          4 installations complétées cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-installation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-installation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="77b09b20-401a-4868-aa9e-628501e5c0f5">
+  <input type="hidden" name="subject" value="Nouveau lead — Installation Thermopompe Québec — Saint-Sulpice">
   <input type="hidden" name="ville-cible" value="Saint-Sulpice">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="in-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Type d'installation</p>
@@ -858,28 +859,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          15 installations complétées cette semaine
+          4 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Lanaudière (14)</h4>
         <div class="el-footer__links">
-          <a href="/saint-pierre">Saint-Pierre</a>
-          <a href="/lavaltrie">Lavaltrie</a>
-          <a href="/lac-du-taureau">Lac-du-Taureau</a>
-          <a href="/lac-cabasta">Lac-Cabasta</a>
-          <a href="/saint-cleophas-de-brandon">Saint-Cléophas-de-Brandon</a>
-          <a href="/berthierville">Berthierville</a>
-          <a href="/saint-felix-de-valois">Saint-Félix-de-Valois</a>
+          <a href="/sainte-marie-salome">Sainte-Marie-Salomé</a>
+          <a href="/la-visitation-de-l-ile-dupas">La Visitation-de-l'Île-Dupas</a>
+          <a href="/saint-didace">Saint-Didace</a>
+          <a href="/saint-come">Saint-Côme</a>
+          <a href="/sainte-genevieve-de-berthier">Sainte-Geneviève-de-Berthier</a>
           <a href="/mascouche">Mascouche</a>
-          <a href="/sainte-melanie">Sainte-Mélanie</a>
-          <a href="/saint-thomas">Saint-Thomas</a>
-          <a href="/saint-esprit">Saint-Esprit</a>
-          <a href="/sainte-elisabeth">Sainte-Élisabeth</a>
-          <a href="/l-assomption">L'Assomption</a>
-          <a href="/saint-michel-des-saints">Saint-Michel-des-Saints</a>
+          <a href="/saint-calixte">Saint-Calixte</a>
+          <a href="/berthierville">Berthierville</a>
+          <a href="/baie-de-la-bouteille">Baie-de-la-Bouteille</a>
+          <a href="/saint-pierre">Saint-Pierre</a>
           <a href="/entrelacs">Entrelacs</a>
+          <a href="/sainte-elisabeth">Sainte-Élisabeth</a>
+          <a href="/saint-roch-de-l-achigan">Saint-Roch-de-l'Achigan</a>
+          <a href="/manawan">Manawan</a>
+          <a href="/saint-alexis">Saint-Alexis</a>
         </div>
       </div>
 
@@ -975,7 +976,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

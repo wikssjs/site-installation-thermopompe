@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-installation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-installation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="77b09b20-401a-4868-aa9e-628501e5c0f5">
+  <input type="hidden" name="subject" value="Nouveau lead — Installation Thermopompe Québec — Saint-Lazare-de-Bellechasse">
   <input type="hidden" name="ville-cible" value="Saint-Lazare-de-Bellechasse">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="in-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Type d'installation</p>
@@ -865,21 +866,21 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Chaudière-Appalaches (12)</h4>
         <div class="el-footer__links">
-          <a href="/saint-louis-de-gonzague">Saint-Louis-de-Gonzague</a>
-          <a href="/saint-jules">Saint-Jules</a>
-          <a href="/saint-simon-les-mines">Saint-Simon-les-Mines</a>
-          <a href="/beaumont">Beaumont</a>
-          <a href="/saint-just-de-bretenieres">Saint-Just-de-Bretenières</a>
-          <a href="/saint-prosper">Saint-Prosper</a>
-          <a href="/saint-bernard">Saint-Bernard</a>
-          <a href="/saint-adrien-d-irlande">Saint-Adrien-d'Irlande</a>
-          <a href="/lac-poulin">Lac-Poulin</a>
-          <a href="/saint-magloire">Saint-Magloire</a>
-          <a href="/saint-patrice-de-beaurivage">Saint-Patrice-de-Beaurivage</a>
-          <a href="/east-broughton">East Broughton</a>
           <a href="/saint-joseph-des-erables">Saint-Joseph-des-Érables</a>
-          <a href="/saint-sylvestre">Saint-Sylvestre</a>
+          <a href="/sainte-sabine">Sainte-Sabine</a>
+          <a href="/saint-julien">Saint-Julien</a>
+          <a href="/saint-jean-de-brebeuf">Saint-Jean-de-Brébeuf</a>
+          <a href="/saint-apollinaire">Saint-Apollinaire</a>
+          <a href="/saint-damien-de-buckland">Saint-Damien-de-Buckland</a>
           <a href="/saint-martin">Saint-Martin</a>
+          <a href="/saint-fabien-de-panet">Saint-Fabien-de-Panet</a>
+          <a href="/tourville">Tourville</a>
+          <a href="/saint-leon-de-standon">Saint-Léon-de-Standon</a>
+          <a href="/saint-hilaire-de-dorset">Saint-Hilaire-de-Dorset</a>
+          <a href="/sacre-coeur-de-jesus">Sacré-Coeur-de-Jésus</a>
+          <a href="/saint-philemon">Saint-Philémon</a>
+          <a href="/east-broughton">East Broughton</a>
+          <a href="/saint-isidore">Saint-Isidore</a>
         </div>
       </div>
 
@@ -975,7 +976,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {

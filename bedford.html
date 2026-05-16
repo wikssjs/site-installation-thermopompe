@@ -143,7 +143,7 @@
       <div class="el-hero__kicker">
         <div class="el-badge-live">
           <span class="in-pulse" style="width:.375rem;height:.375rem;border-radius:50%;background:var(--p400);display:inline-block;flex-shrink:0"></span>
-          12 installations complétées cette semaine
+          5 installations complétées cette semaine
         </div>
       </div>
 
@@ -213,10 +213,11 @@
     </div>
   </div>
   <div class="el-form-card__body">
-<form id="empire-form" name="devis-installation-thermopompe" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="devis-installation-thermopompe">
+<form id="empire-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="77b09b20-401a-4868-aa9e-628501e5c0f5">
+  <input type="hidden" name="subject" value="Nouveau lead — Installation Thermopompe Québec — Bedford">
   <input type="hidden" name="ville-cible" value="Bedford">
-  <p class="hidden"><label>Ne pas remplir: <input name="bot-field"></label></p>
+  <input type="hidden" name="botcheck" value="">
 
   <div class="in-form-step active" id="step-1">
     <p style="font-size:.6875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:.875rem">Type d'installation</p>
@@ -864,28 +865,28 @@ placeholder="Ex : type de logement, nombre de pieces, systeme actuel a remplacer
         </p>
         <div class="el-footer__pulse-row">
           <span class="in-pulse" style="width:.4375rem;height:.4375rem;border-radius:9999px;background:var(--p500);display:inline-block"></span>
-          12 installations complétées cette semaine
+          5 installations complétées cette semaine
         </div>
       </div>
 
       <div>
         <h4 class="el-footer__col-label">Installation thermopompe en Estrie (05)</h4>
         <div class="el-footer__links">
-          <a href="/bonsecours">Bonsecours</a>
-          <a href="/saint-hermenegilde">Saint-Herménégilde</a>
-          <a href="/saint-malo">Saint-Malo</a>
-          <a href="/frontenac">Frontenac</a>
-          <a href="/lawrenceville">Lawrenceville</a>
-          <a href="/lac-megantic">Lac-Mégantic</a>
-          <a href="/chartierville">Chartierville</a>
-          <a href="/sainte-cecile-de-whitton">Sainte-Cécile-de-Whitton</a>
-          <a href="/saint-alphonse-de-granby">Saint-Alphonse-de-Granby</a>
-          <a href="/saint-denis-de-brompton">Saint-Denis-de-Brompton</a>
-          <a href="/la-patrie">La Patrie</a>
-          <a href="/scotstown">Scotstown</a>
-          <a href="/saint-isidore-de-clifton">Saint-Isidore-de-Clifton</a>
-          <a href="/stukely-sud">Stukely-Sud</a>
-          <a href="/saint-benoit-du-lac">Saint-Benoît-du-Lac</a>
+          <a href="/stanbridge-east">Stanbridge East</a>
+          <a href="/brome">Brome</a>
+          <a href="/milan">Milan</a>
+          <a href="/valcourt">Valcourt</a>
+          <a href="/saint-venant-de-paquette">Saint-Venant-de-Paquette</a>
+          <a href="/val-des-sources">Val-des-Sources</a>
+          <a href="/ham-sud">Ham-Sud</a>
+          <a href="/richmond">Richmond</a>
+          <a href="/warden">Warden</a>
+          <a href="/magog">Magog</a>
+          <a href="/saint-adrien">Saint-Adrien</a>
+          <a href="/frelighsburg">Frelighsburg</a>
+          <a href="/sainte-sabine">Sainte-Sabine</a>
+          <a href="/weedon">Weedon</a>
+          <a href="/bolton-est">Bolton-Est</a>
         </div>
       </div>
 
@@ -981,7 +982,7 @@ function nextStep(n) {
 
 function prevStep(n) { showStep(n); }
 
-var _submitUrl = '/';
+var _submitUrl = 'https://api.web3forms.com/submit';
 var _form = document.getElementById('empire-form');
 if (_form) {
   _form.addEventListener('submit', function(e) {
