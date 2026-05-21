@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:site_name" content="Installation Thermopompe Québec">
-<meta property="article:modified_time" content="2026-05-17">
+<meta property="article:modified_time" content="2026-05-21">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Saint-Louis-de-Gonzague : Installation Thermopompe 2026 — Certifiés RBQ">
 <meta name="twitter:description" content="Installez votre thermopompe à Saint-Louis-de-Gonzague avec des experts certifiés RBQ. Chauffage et climatisation — devis gratuit sans engagement.">
@@ -1174,6 +1174,14 @@ if (_stickyBar) {
     btn.addEventListener('click',function(){
       var item=btn.closest('.in-faq-item');
       var isOpen=item.classList.contains('is-open');
+      document.querySelectorAll('.in-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
+      if(!isOpen)item.classList.add('is-open');
+    });
+  });
+})();
+</script>
+</body>
+</html>');
       document.querySelectorAll('.in-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
       if(!isOpen)item.classList.add('is-open');
     });
