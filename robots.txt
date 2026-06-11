@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Crawl-delay: 3
 
 Sitemap: https://installation-thermopompe.ca/sitemap-index.xml
