@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /soumission-installation-thermopompe/
 
 Sitemap: https://installation-thermopompe.ca/sitemap-index.xml
